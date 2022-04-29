@@ -11,3 +11,4 @@ for a series of .dll calls for camera setup, image acquisition and tidy up.
 stand alone camera.
 - The demo unit tested was unreliable. Power is seemingly shared between the DC adaptor, the switch and the USB port and would randomly fail or the usb connection would be lost.
 - With the current firmware (FW_PCO_EDGE_26_USB3_V01_02) the camera defaults to the trigger I/O line (SMA 1) being switched off in software (which is applied on power up or when calling 'PCO_ResetSettingsToDefault'). It can be toggled on in Camware and triggered manually (with NI-MAX test panels for example), but to achieve this in Python would require implementing a large struct: see PCO_GetHWIOSignalDescriptor (TRIGGER_INPUT) and PCO_SetHWIOSignal in PCO SDK for details. So currently no external triggering has been successfully implemented in Python.
+  - i.e. 'pco_edge26_external_trigger_example.py' has not successfully run (included as template for future testing).
